@@ -63,14 +63,16 @@ for (var i = 0; i < movies.length; i++) {
   // console.log(movies[i]);
   var movie = movies[i];
   // console.log(movie.title);
-  // METHOD 1:
+
+  // METHOD 1 (MAY NOT WORK IN JS ANYMORE!):
   // document.getElementById('moviesList').innerHTML += '<p>'+ movie.title +'</p>'
   // moviesList.innerHTML += '<div class="col-12 col-sm-6 col-md-4">';
   //   moviesList.innerHTML += '<div class="card">';
   //
   //   moviesList.innerHTML += '</div>';
   // moviesList.innerHTML += '</div>';
-  // NOW THIS METHOD (ABOVE) DOESN'T WORK ANY MORE
+  // ***NOW THIS METHOD (ABOVE) DOESN'T WORK ANY MORE***
+
 // METHOD 2:
 // var movieCard = '<div class="col-12 col-sm-6 col-md-4">';
 //     movieCard += '<div class="card">';
