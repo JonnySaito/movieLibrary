@@ -1,3 +1,7 @@
+body,html{
+  /* overflow: hidden; */
+}
+
 .overlay{
     position: fixed;
     top: 0;
@@ -9,7 +13,6 @@
     justify-content: center;
     align-items: center;
 }
-
 
 .overlayContent{
   width: 80vw;
@@ -25,15 +28,12 @@
   top: 0;
   margin: 10px;
   color: #2c3e50;
+  z-index: 10000;
 }
 
 #close:hover{
   color: #bdc3c7;
   cursor: pointer;
-}
-
-body,html{
-  /* overflow: hidden; */
 }
 
 .movieThumb:hover{

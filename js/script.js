@@ -114,7 +114,7 @@ var movies = [
 //   title: 'Ratatouille',
 //   year: 2007,
 //   directors: ['Brad Bird', 'Jan Pinkava'],
-//   bio: 'A wheelchair-bound photographer spies on his neighbors from his apartment window and becomes convinced one of them has committed murder.',
+//   bio: 'A rat who can cook makes an unusual alliance with a young kitchen worker at a famous restaurant.',
 //   length: 111,
 //   poster: 'ratatouille.jpg',
 //  genre: ['Animation']
@@ -150,13 +150,17 @@ if(movie.genre[0] === 'Drama'){
   genreClass = 'border-danger';
 } else if(movie.genre[0] === 'Animation'){
   genreClass = 'border-secondary';
+} else if(movie.genre[0] === 'Thriller'){
+  genreClass = 'border-warning';
 } else {
   genreClass = 'border-dark';
 }
 
+
 var movieCard = '<div class="col-12 col-sm-6 col-md-3 mb-3 text-center">';
-    // movieCard += '<div class="movieThumb card '+genreClass+' " onclick="showMoreMovie();">'; ONE WAY TO ADD A CLICK EVENT; BELOW IS ANOTHER WAY
-    movieCard += '<div class="movieThumb movieThumb2 card '+genreClass+' ">';
+    movieCard += '<div class="movieThumb card '+genreClass+' " onclick="showMoreMovie('+movie.id+');">';
+    // ONE WAY TO ADD A CLICK EVENT; BELOW IS ANOTHER WAY
+    // movieCard += '<div class="movieThumb movieThumb2 card '+genreClass+' " data-id="'+movie.id+'">';
     movieCard += '<img src="images/posters/'+movie.poster+'" class="card-img-top" alt="">';
       movieCard += '<div class="card-body">';
         movieCard += '<h5 class="card-title">'+movie.title+'</h5>';
@@ -200,23 +204,43 @@ moviesList.innerHTML += movieCard;
 //
 }
 
-function showMoreMovie(){
-  // console.log("You have clicked on a movie!");
-  document.getElementById('moviePopUp').style.display = 'flex';
-  document.body.style.overflow = 'hidden';
+function showMoreMovie(movieNumber){
+  var singleMovie;
+  console.log(movieNumber);
+    for (var i = 0; i < movies.length; i++) {
+        if (movies[i].id === movieNumber) {
+            console.log(movies[i]);
+            singleMovie = movies[i];
+            break;
+        }
+    }
+    console.log(singleMovie);
+    document.getElementById('posterImage').src = 'images/posters/'+singleMovie.poster;
+    document.getElementById('movieTitle').innerText = singleMovie.title;
+    document.getElementById('movieYear').innerText = singleMovie.year;
+    document.getElementById('movieDirectors').innerHTML = '<li>'+singleMovie.directors+'</li>';
+    // make a loop to get the array items 
+
+      document.getElementById('moviePopUp').style.display = 'flex';
+      document.body.style.overflow = 'hidden';
+
 }
 
 var movieThumbnails = document.getElementsByClassName('movieThumb2');
-for (var i = 0; i < movieThumbnails.length; i++) {
-  movieThumbnails[i]
-  // console.log(movieThumbnails);
-  // Either method below should work
-  movieThumbnails[i].onclick = showMoreMovie;
-  // // movieThumbnails[i].onclick = function(){
-  //   showMoreMovie(); ALTERNATIVE WAY TO ABOVE LINE
-  }
+  for (var i = 0; i < movieThumbnails.length; i++) {
+    // movieThumbnails[i];
+    // console.log(movieThumbnails[i]);
+    // console.log(movieThumbnails[i].dataset.id);
+    // var id = parseInt(movieThumbnails[i].dataset.id);
+    // movieThumbnails[i].onclick = showMoreMovie;
+    // ALTERNATIVE WAY TO ABOVE:
+    movieThumbnails[i].onclick = function(){
+      var id = parseInt(this.dataset.id);
+      showMoreMovie(id);
+    }
+}
 
 document.getElementById('close').onclick = function(){
-  document.getElementById('moviePopUp').style.display = 'none'
-  document.body.style.overflow = 'scroll';
+document.getElementById('moviePopUp').style.display = 'none'
+document.body.style.overflow = 'scroll';
 }
