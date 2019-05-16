@@ -5,7 +5,7 @@ var movies = [
     year: 1987,
     directors: ['Joel Coen', 'Ethan Coen'],
     bio: 'When a childless couple of an ex-con and an ex-cop decide to help themselves to one of another family\'s quintuplets, their lives become more complicated than they anticipated.',
-    length: 94,
+    movieLength: 94,
     poster: 'RaisingArizona.jpg',
     genre: ['Comedy']
   },
@@ -15,9 +15,9 @@ var movies = [
     year: 1941,
     directors: ['Orson Welles'],
     bio: 'Following the death of a publishing tycoon, news reporters scramble to discover the meaning of his final utterance.',
-    length: 119,
+    movieLength: 119,
     poster: 'citizenKane.jpg',
-    genre: ['Drama']
+    genre: ['Drama', 'Psychological']
   },
   {
     id: 3,
@@ -25,7 +25,7 @@ var movies = [
     year: 1982,
     directors: ['Ridley Scott'],
     bio: 'A blade runner must pursue and terminate four replicants who stole a ship in space and returned to Earth to find their creator.',
-    length: 117,
+    movieLength: 117,
     poster: 'bladerunner.jpg',
     genre: ['Sci-fi', 'Action']
   },
@@ -35,7 +35,7 @@ var movies = [
     year: 2001,
     directors: ['Wes Anderson'],
     bio: 'The eccentric members of a dysfunctional family reluctantly gather under the same roof for various reasons.',
-    length: 110,
+    movieLength: 110,
     poster: 'royalTenenbaums.jpg',
     genre: ['Comedy', 'Drama']
   },
@@ -45,80 +45,80 @@ var movies = [
     year: 1976,
     directors: ['Martin Scorcese'],
     bio: 'A mentally unstable veteran works as a nighttime taxi driver in NYC, where the perceived sleaze fuels his urge for violent action by attempting to liberate an underage prostitute.',
-    length: 114,
+    movieLength: 114,
     poster: 'taxiDriver.jpg',
-    genre: ['Drama']
+    genre: ['Drama', 'Psychological']
   },
-//   {
-//     id: 6,
-//     title: 'Shoplifters',
-//     year: 2018,
-//     directors: ['Hirokazu Koreeda'],
-//     bio: 'A family of small-time crooks take in a child they find outside in the cold.',
-//     length: 121,
-//     poster: 'shoplifters.jpg',
-//    genre: ['Drama']
-//  },
-//   {
-//     id: 7,
-//     title: 'Big Lebowski',
-//     year: 1998,
-//     directors: ['Joel Coen', 'Ethan Coen'],
-//     bio: 'Jeff "The Dude" Lebowski, mistaken for a millionaire of the same name, seeks restitution for his ruined rug and enlists his bowling buddies to help get it.',
-//     length: 117,
-//     poster: 'bigLebowski.jpg',
-//    genre: ['Comedy']
-//  },
-//   {
-//     id: 8,
-//     title: 'Heathers',
-//     year: 1988,
-//     directors: ['Michael Lehmann'],
-//     bio: 'In order to get out of the snobby clique that is destroying her good-girl reputation, an intelligent teen teams up with a dark sociopath in a plot to kill the cool kids.',
-//     length: 103,
-//     poster: 'heathers.jpg',
-//    genre: ['Comedy']
-//  },
-//   {
-//     id: 9,
-//     title: 'Wings of Desire',
-//     year: 1987,
-//     directors: ['Wim Wenders'],
-//     bio: 'An angel tires of overseeing human activity and wishes to become human when he falls in love with a mortal.',
-//     length: 128,
-//     poster: 'wingsOfDesire.jpg',
-//    genre: ['Drama']
-//  },
-//   {
-//     id: 10,
-//     title: 'Sen to Chihiro',
-//     year: 2001,
-//     directors: ['Hayao Miyazaki'],
-//     bio: 'During her family\'s move to the suburbs, a sullen 10-year-old girl wanders into a world ruled by gods, witches, and spirits, and where humans are changed into beasts.',
-//     length: 125,
-//     poster: 'senToChihiro.jpg',
-//    genre: ['Animation']
-//  },
-// {
-//    id: 11,
-//    title: 'Rear Window',
-//    year: 1954,
-//    directors: ['Alfred Hitchcock'],
-//    bio: 'A wheelchair-bound photographer spies on his neighbors from his apartment window and becomes convinced one of them has committed murder.',
-//    length: 112,
-//    poster: 'rearWindow.jpg',
-//   genre: ['Drama', 'Suspense']
-// },
-// {
-//   id: 12,
-//   title: 'Ratatouille',
-//   year: 2007,
-//   directors: ['Brad Bird', 'Jan Pinkava'],
-//   bio: 'A rat who can cook makes an unusual alliance with a young kitchen worker at a famous restaurant.',
-//   length: 111,
-//   poster: 'ratatouille.jpg',
-//  genre: ['Animation', 'Comedy']
-// },
+  {
+    id: 6,
+    title: 'Shoplifters',
+    year: 2018,
+    directors: ['Hirokazu Koreeda'],
+    bio: 'A family of small-time crooks take in a child they find outside in the cold.',
+    movieLength: 121,
+    poster: 'shoplifters.jpg',
+   genre: ['Drama']
+ },
+  {
+    id: 7,
+    title: 'Big Lebowski',
+    year: 1998,
+    directors: ['Joel Coen', 'Ethan Coen'],
+    bio: 'Jeff "The Dude" Lebowski, mistaken for a millionaire of the same name, seeks restitution for his ruined rug and enlists his bowling buddies to help get it.',
+    movieLength: 117,
+    poster: 'bigLebowski.jpg',
+   genre: ['Comedy']
+ },
+  {
+    id: 8,
+    title: 'Heathers',
+    year: 1988,
+    directors: ['Michael Lehmann'],
+    bio: 'In order to get out of the snobby clique that is destroying her good-girl reputation, an intelligent teen teams up with a dark sociopath in a plot to kill the cool kids.',
+    movieLength: 103,
+    poster: 'heathers.jpg',
+   genre: ['Comedy', 'Psychological']
+ },
+  {
+    id: 9,
+    title: 'Wings of Desire',
+    year: 1987,
+    directors: ['Wim Wenders'],
+    bio: 'An angel tires of overseeing human activity and wishes to become human when he falls in love with a mortal.',
+    movieLength: 128,
+    poster: 'wingsOfDesire.jpg',
+   genre: ['Drama']
+ },
+  {
+    id: 10,
+    title: 'Sen to Chihiro',
+    year: 2001,
+    directors: ['Hayao Miyazaki'],
+    bio: 'During her family\'s move to the suburbs, a sullen 10-year-old girl wanders into a world ruled by gods, witches, and spirits, and where humans are changed into beasts.',
+    movieLength: 125,
+    poster: 'senToChihiro.jpg',
+   genre: ['Animation']
+ },
+{
+   id: 11,
+   title: 'Rear Window',
+   year: 1954,
+   directors: ['Alfred Hitchcock'],
+   bio: 'A wheelchair-bound photographer spies on his neighbors from his apartment window and becomes convinced one of them has committed murder.',
+   movieLength: 112,
+   poster: 'rearWindow.jpg',
+  genre: ['Drama', 'Suspense', 'Psychological']
+},
+{
+  id: 12,
+  title: 'Ratatouille',
+  year: 2007,
+  directors: ['Brad Bird', 'Jan Pinkava'],
+  bio: 'A rat who can cook makes an unusual alliance with a young kitchen worker at a famous restaurant.',
+  movieLength: 111,
+  poster: 'ratatouille.jpg',
+ genre: ['Animation', 'Comedy']
+},
 ];
 
 // console.log(movies);
@@ -140,29 +140,29 @@ for (var i = 0; i < movies.length; i++) {
   // ***NOW THIS METHOD (ABOVE) MAY NOT WORK ANY MORE***
 
 // METHOD 2:
-var genreClass = '';
+var genreClass = getGenreColour(movie.genre[0]);
 
-if(movie.genre[0] === 'Drama'){
-  genreClass = 'border-primary';
-} else if(movie.genre[0] === 'Comedy'){
-  genreClass = 'border-success';
-} else if(movie.genre[0] === 'Sci-fi'){
-  genreClass = 'border-danger';
-} else if(movie.genre[0] === 'Animation'){
-  genreClass = 'border-secondary';
-} else if(movie.genre[0] === 'Suspense'){
-  genreClass = 'border-warning';
-} else if(movie.genre[0] === 'Action'){
-  genreClass = 'border-info';
-} else {
-  genreClass = 'border-dark';
-}
+// if(movie.genre[0] === 'Drama'){
+//   genreClass = 'border-primary';
+// } else if(movie.genre[0] === 'Comedy'){
+//   genreClass = 'border-success';
+// } else if(movie.genre[0] === 'Sci-fi'){
+//   genreClass = 'border-danger';
+// } else if(movie.genre[0] === 'Animation'){
+//   genreClass = 'border-secondary';
+// } else if(movie.genre[0] === 'Suspense'){
+//   genreClass = 'border-warning';
+// } else if(movie.genre[0] === 'Action'){
+//   genreClass = 'border-info';
+// } else {
+//   genreClass = 'border-dark';
+// }
 
 
 var movieCard = '<div class="col-12 col-sm-6 col-md-3 mb-3 text-center">';
-    movieCard += '<div class="movieThumb card '+genreClass+' " onclick="showMoreMovie('+movie.id+');">';
+    movieCard += '<div class="movieThumb card h-100 border-'+genreClass+' " onclick="showMoreMovie('+movie.id+');">';
     // ONE WAY TO ADD A CLICK EVENT; BELOW IS ANOTHER WAY
-    // movieCard += '<div class="movieThumb movieThumb2 card '+genreClass+' " data-id="'+movie.id+'">';
+    // movieCard += '<div class="movieThumb movieThumb2 card h-100 '+genreClass+' " data-id="'+movie.id+'">';
     movieCard += '<img src="images/posters/'+movie.poster+'" class="card-img-top" alt="">';
       movieCard += '<div class="card-body">';
         movieCard += '<h5 class="card-title">'+movie.title+'</h5>';
@@ -223,27 +223,30 @@ function showMoreMovie(movieNumber){
                 document.getElementById('movieDirectors').innerHTML += "<li class = 'list-inline-item'>" + singleMovie.directors[j] + "</li>";
             };
         document.getElementById('movieBio').innerText = singleMovie.bio;
-        document.getElementById('movieLength').innerText = singleMovie.length;
+        document.getElementById('movieLength').innerText = singleMovie.movieLength;
 
         document.getElementById('movieGenre').innerHTML = "";
+
+
         var badgeClass = '';
-          for (var k = 0; k < singleMovie.genre.length; k++) {
-              if(movie.genre[0] === 'Drama'){
-                badgeClass = 'badge badge-primary';
-              } else if(movie.genre[0] === 'Comedy'){
-                badgeClass = 'badge badge-success';
-              } else if(movie.genre[0] === 'Sci-fi'){
-                badgeClass = 'badge badge-danger';
-              } else if(movie.genre[0] === 'Animation'){
-                badgeClass = 'badge badge-secondary';
-              } else if(movie.genre[0] === 'Suspense'){
-                badgeClass = 'badge badge-warning';
-              } else if(movie.genre[0] === 'Action'){
-                badgeClass = 'badge badge-info';
-              } else {
-                badgeClass = 'badge badge-dark';
-              }
-                document.getElementById('movieGenre').innerHTML += '<span class='+badgeClass+'>' + singleMovie.genre[k] + '</span>';
+          for (var i = 0; i < singleMovie.genre.length; i++) {
+              var genreColour = getGenreColour(singleMovie.genre[i]);
+        //       if(singleMovie.genre[i] === 'Drama'){
+        //         badgeClass = 'badge-primary';
+        //     } else if(singleMovie.genre[i] === 'Comedy'){
+        //         badgeClass = 'badge-success';
+        //     } else if(singleMovie.genre[i] === 'Sci-fi'){
+        //         badgeClass = 'badge-danger';
+        //     } else if(singleMovie.genre[i] === 'Animation'){
+        //         badgeClass = 'badge-secondary';
+        //     } else if(singleMovie.genre[i] === 'Suspense'){
+        //         badgeClass = 'badge-warning';
+        //     } else if(singleMovie.genre[i] === 'Action'){
+        //         badgeClass = 'badge-info';
+        //       } else {
+        //         badgeClass = 'badge-dark';
+        //       }
+                document.getElementById('movieGenre').innerHTML += '<span class= "badge badge-'+genreColour+' mr-1">' + singleMovie.genre[i] + '</span>';
             };
 
         document.getElementById('moviePopUp').style.display = 'flex';
@@ -268,4 +271,24 @@ var movieThumbnails = document.getElementsByClassName('movieThumb2');
 document.getElementById('close').onclick = function(){
 document.getElementById('moviePopUp').style.display = 'none'
 document.body.style.overflow = 'scroll';
+}
+
+function getGenreColour(genre){
+    if(genre === 'Drama'){
+      return 'primary';
+    } else if(genre === 'Comedy'){
+      return 'success';
+    } else if(genre === 'Sci-fi'){
+      return 'danger';
+    } else if(genre === 'Animation'){
+      return 'secondary';
+    } else if(genre === 'Suspense'){
+      return 'warning';
+    } else if(genre === 'Action'){
+      return 'info';
+    } else if(genre === 'Psychological'){
+        return 'dark';
+    } else {
+      return 'light';
+    }
 }
