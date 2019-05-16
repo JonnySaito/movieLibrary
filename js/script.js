@@ -121,7 +121,7 @@ var movies = [
 // },
 ];
 
-console.log(movies);
+// console.log(movies);
 
 var moviesList = document.getElementById('moviesList');
 
@@ -130,14 +130,14 @@ for (var i = 0; i < movies.length; i++) {
   var movie = movies[i];
   // console.log(movie.title);
 
-  // METHOD 1 (MAY NOT WORK IN JS ANYMORE!):
+  // METHOD 1 ***MAY NOT WORK IN JS ANYMORE!***:
   // document.getElementById('moviesList').innerHTML += '<p>'+ movie.title +'</p>'
   // moviesList.innerHTML += '<div class="col-12 col-sm-6 col-md-4">';
   //   moviesList.innerHTML += '<div class="card">';
   //
   //   moviesList.innerHTML += '</div>';
   // moviesList.innerHTML += '</div>';
-  // ***NOW THIS METHOD (ABOVE) DOESN'T WORK ANY MORE***
+  // ***NOW THIS METHOD (ABOVE) MAY NOT WORK ANY MORE***
 
 // METHOD 2:
 var genreClass = '';
@@ -225,10 +225,25 @@ function showMoreMovie(movieNumber){
         document.getElementById('movieBio').innerText = singleMovie.bio;
         document.getElementById('movieLength').innerText = singleMovie.length;
 
-
         document.getElementById('movieGenre').innerHTML = "";
+        var badgeClass = '';
           for (var k = 0; k < singleMovie.genre.length; k++) {
-                document.getElementById('movieGenre').innerHTML += "<li class = 'list-inline-item'>" + singleMovie.genre[k] + "</li>";
+              if(movie.genre[0] === 'Drama'){
+                badgeClass = 'badge badge-primary';
+              } else if(movie.genre[0] === 'Comedy'){
+                badgeClass = 'badge badge-success';
+              } else if(movie.genre[0] === 'Sci-fi'){
+                badgeClass = 'badge badge-danger';
+              } else if(movie.genre[0] === 'Animation'){
+                badgeClass = 'badge badge-secondary';
+              } else if(movie.genre[0] === 'Suspense'){
+                badgeClass = 'badge badge-warning';
+              } else if(movie.genre[0] === 'Action'){
+                badgeClass = 'badge badge-info';
+              } else {
+                badgeClass = 'badge badge-dark';
+              }
+                document.getElementById('movieGenre').innerHTML += '<span class='+badgeClass+'>' + singleMovie.genre[k] + '</span>';
             };
 
         document.getElementById('moviePopUp').style.display = 'flex';
