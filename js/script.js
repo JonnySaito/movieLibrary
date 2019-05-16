@@ -7,7 +7,7 @@ var movies = [
     bio: 'When a childless couple of an ex-con and an ex-cop decide to help themselves to one of another family\'s quintuplets, their lives become more complicated than they anticipated.',
     length: 94,
     poster: 'RaisingArizona.jpg',
-    genre: ['Comedy', 'Baby Kidnapping']
+    genre: ['Comedy']
   },
   {
     id: 2,
@@ -47,7 +47,7 @@ var movies = [
     bio: 'A mentally unstable veteran works as a nighttime taxi driver in NYC, where the perceived sleaze fuels his urge for violent action by attempting to liberate an underage prostitute.',
     length: 114,
     poster: 'taxiDriver.jpg',
-    genre: ['Drama', 'Bad Haircut']
+    genre: ['Drama']
   },
 //   {
 //     id: 6,
@@ -107,7 +107,7 @@ var movies = [
 //    bio: 'A wheelchair-bound photographer spies on his neighbors from his apartment window and becomes convinced one of them has committed murder.',
 //    length: 112,
 //    poster: 'rearWindow.jpg',
-//   genre: ['Thriller']
+//   genre: ['Drama', 'Suspense']
 // },
 // {
 //   id: 12,
@@ -117,7 +117,7 @@ var movies = [
 //   bio: 'A rat who can cook makes an unusual alliance with a young kitchen worker at a famous restaurant.',
 //   length: 111,
 //   poster: 'ratatouille.jpg',
-//  genre: ['Animation']
+//  genre: ['Animation', 'Comedy']
 // },
 ];
 
@@ -150,8 +150,10 @@ if(movie.genre[0] === 'Drama'){
   genreClass = 'border-danger';
 } else if(movie.genre[0] === 'Animation'){
   genreClass = 'border-secondary';
-} else if(movie.genre[0] === 'Thriller'){
+} else if(movie.genre[0] === 'Suspense'){
   genreClass = 'border-warning';
+} else if(movie.genre[0] === 'Action'){
+  genreClass = 'border-info';
 } else {
   genreClass = 'border-dark';
 }
@@ -169,9 +171,6 @@ var movieCard = '<div class="col-12 col-sm-6 col-md-3 mb-3 text-center">';
 movieCard += '</div>';
 // console.log(movieCard);
 moviesList.innerHTML += movieCard;
-
-// var genre;
-// movies.push(genre); NOT SURE ABOUT THIS
 
 // METHOD 3 (A LONGER WAY):
 // var columns = document.createElement('div');
@@ -206,25 +205,36 @@ moviesList.innerHTML += movieCard;
 
 function showMoreMovie(movieNumber){
   var singleMovie;
-  console.log(movieNumber);
+  // console.log(movieNumber);
     for (var i = 0; i < movies.length; i++) {
         if (movies[i].id === movieNumber) {
-            console.log(movies[i]);
+            // console.log(movies[i]);
             singleMovie = movies[i];
             break;
         }
     }
-    console.log(singleMovie);
-    document.getElementById('posterImage').src = 'images/posters/'+singleMovie.poster;
-    document.getElementById('movieTitle').innerText = singleMovie.title;
-    document.getElementById('movieYear').innerText = singleMovie.year;
-    document.getElementById('movieDirectors').innerHTML = '<li>'+singleMovie.directors+'</li>';
-    // make a loop to get the array items 
 
-      document.getElementById('moviePopUp').style.display = 'flex';
-      document.body.style.overflow = 'hidden';
+        document.getElementById('posterImage').src = 'images/posters/'+singleMovie.poster;
+        document.getElementById('movieTitle').innerText = singleMovie.title;
+        document.getElementById('movieYear').innerText = singleMovie.year;
 
+        document.getElementById('movieDirectors').innerHTML = "";
+          for (var j = 0; j < singleMovie.directors.length; j++) {
+                document.getElementById('movieDirectors').innerHTML += "<li class = 'list-inline-item'>" + singleMovie.directors[j] + "</li>";
+            };
+        document.getElementById('movieBio').innerText = singleMovie.bio;
+        document.getElementById('movieLength').innerText = singleMovie.length;
+
+
+        document.getElementById('movieGenre').innerHTML = "";
+          for (var k = 0; k < singleMovie.genre.length; k++) {
+                document.getElementById('movieGenre').innerHTML += "<li class = 'list-inline-item'>" + singleMovie.genre[k] + "</li>";
+            };
+
+        document.getElementById('moviePopUp').style.display = 'flex';
+        document.body.style.overflow = 'hidden';
 }
+
 
 var movieThumbnails = document.getElementsByClassName('movieThumb2');
   for (var i = 0; i < movieThumbnails.length; i++) {
