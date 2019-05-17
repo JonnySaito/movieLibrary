@@ -119,6 +119,86 @@ var movies = [
   poster: 'ratatouille.jpg',
  genre: ['Animation', 'Comedy']
 },
+{
+  id: 13,
+  title: 'Mulholland Drive',
+  year: 2001,
+  directors: ['David Lynch'],
+  bio: 'After a car wreck on the winding Mulholland Drive renders a woman amnesiac, she and a perky Hollywood-hopeful search for clues and answers across Los Angeles in a twisting venture beyond dreams and reality.',
+  movieLength: 147,
+  poster: 'mulhollandDrive.jpg',
+ genre: ['Psychological', 'Drama']
+},
+{
+  id: 14,
+  title: 'Harold and Maude',
+  year: 1971,
+  directors: ['Hal Ashby'],
+  bio: 'Young, rich, and obsessed with death, Harold finds himself changed forever when he meets lively septuagenarian Maude at a funeral.',
+  movieLength: 91,
+  poster: 'haroldAndMaude.jpg',
+ genre: ['Comedy', 'Drama']
+},
+{
+  id: 15,
+  title: 'Dreams',
+  year: 1990,
+  directors: ['Akira Kurosawa'],
+  bio: 'A collection of tales based upon the actual dreams of director Akira Kurosawa. There\'s a very cool story about a foxy ghost who visits a dude stuck in a snowstorm.',
+  movieLength: 119,
+  poster: 'dreams.jpg',
+ genre: ['Drama', 'Japanese']
+},
+{
+  id: 16,
+  title: 'Crouching Tiger, Hidden Dragon',
+  year: 2000,
+  directors: ['Ang Lee'],
+  bio: 'A young Chinese warrior steals a sword from a famed swordsman and then escapes into a world of romantic adventure with a mysterious man in the frontier of the nation.',
+  movieLength: 120,
+  poster: 'crouchingTiger.jpg',
+ genre: ['Drama', 'Action']
+},
+{
+  id: 17,
+  title: 'Paris, Texas',
+  year: 1984,
+  directors: ['Wim Wenders'],
+  bio: 'Travis Henderson, an aimless drifter who has been missing for four years, wanders out of the desert and must reconnect with society, himself, his life, and his family.',
+  movieLength: 145,
+  poster: 'parisTexas.jpg',
+ genre: ['Drama', 'Psychological']
+},
+{
+  id: 18,
+  title: 'Jean de Florette',
+  year: 1986,
+  directors: ['Claude Berri'],
+  bio: 'A greedy landowner and his backward nephew conspire to block the only water source for an adjoining property in order to bankrupt the owner and force him to sell.',
+  movieLength: 120,
+  poster: 'jeanDeFlorette.jpg',
+ genre: ['Drama']
+},
+{
+  id: 19,
+  title: 'Les Quatre Cents Coups',
+  year: 1971,
+  directors: ['Francois Truffaut'],
+  bio: 'A young boy, left without attention, delves into a life of petty crime.',
+  movieLength: 99,
+  poster: '400Blows.jpg',
+ genre: ['Drama']
+},
+{
+  id: 20,
+  title: 'Kes',
+  year: 1969,
+  directors: ['Ken Loach'],
+  bio: 'A young, English working-class boy spends his free time caring for and training his pet falcon.',
+  movieLength: 111,
+  poster: 'kes.jpg',
+ genre: ['Drama']
+}
 ];
 
 // console.log(movies);
@@ -157,7 +237,6 @@ var genreClass = getGenreColour(movie.genre[0]);
 // } else {
 //   genreClass = 'border-dark';
 // }
-
 
 var movieCard = '<div class="col-12 col-sm-6 col-md-3 mb-3 text-center">';
     movieCard += '<div class="movieThumb card h-100 border-'+genreClass+' " onclick="showMoreMovie('+movie.id+');">';
