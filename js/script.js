@@ -11,16 +11,36 @@ var movies = [
   },
   {
     id: 2,
-    title: 'Citizen Kane',
-    year: 1941,
-    directors: ['Orson Welles'],
-    bio: 'Following the death of a publishing tycoon, news reporters scramble to discover the meaning of his final utterance.',
-    movieLength: 119,
-    poster: 'citizenKane.jpg',
-    genre: ['Drama', 'Psychological']
+    title: 'Paris, Texas',
+    year: 1984,
+    directors: ['Wim Wenders'],
+    bio: 'Travis Henderson, an aimless drifter who has been missing for four years, wanders out of the desert and must reconnect with society, himself, his life, and his family.',
+    movieLength: 145,
+    poster: 'parisTexas.jpg',
+   genre: ['Drama', 'Psychological']
   },
   {
     id: 3,
+    title: 'Les Quatre Cents Coups',
+    year: 1971,
+    directors: ['Francois Truffaut'],
+    bio: 'A young boy, left without attention, delves into a life of petty crime.',
+    movieLength: 99,
+    poster: '400Blows.jpg',
+   genre: ['Drama']
+  },
+  {
+    id: 4,
+    title: 'Chinatown',
+    year: 1974,
+    directors: ['Roman Polanski'],
+    bio: 'A private detective hired to expose an adulterer finds himself caught up in a web of deceit, corruption, and murder.',
+    movieLength: 130,
+    poster: 'chinatown.jpg',
+    genre: ['Drama']
+  },
+  {
+    id: 5,
     title: 'Bladerunner',
     year: 1982,
     directors: ['Ridley Scott'],
@@ -30,7 +50,7 @@ var movies = [
     genre: ['Sci-fi', 'Action']
   },
   {
-    id: 4,
+    id: 6,
     title: 'Royal Tenenbaums',
     year: 2001,
     directors: ['Wes Anderson'],
@@ -40,27 +60,17 @@ var movies = [
     genre: ['Comedy', 'Drama']
   },
   {
-    id: 5,
-    title: 'Taxi Driver',
-    year: 1976,
-    directors: ['Martin Scorcese'],
-    bio: 'A mentally unstable veteran works as a nighttime taxi driver in NYC, where the perceived sleaze fuels his urge for violent action by attempting to liberate an underage prostitute.',
-    movieLength: 114,
-    poster: 'taxiDriver.jpg',
-    genre: ['Drama', 'Psychological']
+    id: 7,
+    title: 'Mulholland Drive',
+    year: 2001,
+    directors: ['David Lynch'],
+    bio: 'After a car wreck on the winding Mulholland Drive renders a woman amnesiac, she and a perky Hollywood-hopeful search for clues and answers across Los Angeles in a twisting venture beyond dreams and reality.',
+    movieLength: 147,
+    poster: 'mulhollandDrive.jpg',
+   genre: ['Psychological', 'Drama']
   },
   {
-    id: 6,
-    title: 'Shoplifters',
-    year: 2018,
-    directors: ['Hirokazu Koreeda'],
-    bio: 'A family of small-time crooks take in a child they find outside in the cold.',
-    movieLength: 121,
-    poster: 'shoplifters.jpg',
-   genre: ['Drama']
- },
-  {
-    id: 7,
+    id: 8,
     title: 'Big Lebowski',
     year: 1998,
     directors: ['Joel Coen', 'Ethan Coen'],
@@ -69,17 +79,7 @@ var movies = [
     poster: 'bigLebowski.jpg',
    genre: ['Comedy']
  },
-  {
-    id: 8,
-    title: 'Heathers',
-    year: 1988,
-    directors: ['Michael Lehmann'],
-    bio: 'In order to get out of the snobby clique that is destroying her good-girl reputation, an intelligent teen teams up with a dark sociopath in a plot to kill the cool kids.',
-    movieLength: 103,
-    poster: 'heathers.jpg',
-   genre: ['Comedy', 'Psychological']
- },
-  {
+ {
     id: 9,
     title: 'Wings of Desire',
     year: 1987,
@@ -121,13 +121,13 @@ var movies = [
 },
 {
   id: 13,
-  title: 'Mulholland Drive',
-  year: 2001,
-  directors: ['David Lynch'],
-  bio: 'After a car wreck on the winding Mulholland Drive renders a woman amnesiac, she and a perky Hollywood-hopeful search for clues and answers across Los Angeles in a twisting venture beyond dreams and reality.',
-  movieLength: 147,
-  poster: 'mulhollandDrive.jpg',
- genre: ['Psychological', 'Drama']
+  title: 'Heathers',
+  year: 1988,
+  directors: ['Michael Lehmann'],
+  bio: 'In order to get out of the snobby clique that is destroying her good-girl reputation, an intelligent teen teams up with a dark sociopath in a plot to kill the cool kids.',
+  movieLength: 103,
+  poster: 'heathers.jpg',
+ genre: ['Comedy', 'Psychological']
 },
 {
   id: 14,
@@ -161,13 +161,13 @@ var movies = [
 },
 {
   id: 17,
-  title: 'Paris, Texas',
-  year: 1984,
-  directors: ['Wim Wenders'],
-  bio: 'Travis Henderson, an aimless drifter who has been missing for four years, wanders out of the desert and must reconnect with society, himself, his life, and his family.',
-  movieLength: 145,
-  poster: 'parisTexas.jpg',
- genre: ['Drama', 'Psychological']
+  title: 'Shoplifters',
+  year: 2018,
+  directors: ['Hirokazu Koreeda'],
+  bio: 'A family of small-time crooks take in a child they find outside in the cold.',
+  movieLength: 121,
+  poster: 'shoplifters.jpg',
+ genre: ['Drama']
 },
 {
   id: 18,
@@ -181,13 +181,13 @@ var movies = [
 },
 {
   id: 19,
-  title: 'Les Quatre Cents Coups',
-  year: 1971,
-  directors: ['Francois Truffaut'],
-  bio: 'A young boy, left without attention, delves into a life of petty crime.',
-  movieLength: 99,
-  poster: '400Blows.jpg',
- genre: ['Drama']
+  title: 'Taxi Driver',
+  year: 1976,
+  directors: ['Martin Scorcese'],
+  bio: 'A mentally unstable veteran works as a nighttime taxi driver in NYC, where the perceived sleaze fuels his urge for violent action by attempting to liberate an underage prostitute.',
+  movieLength: 114,
+  poster: 'taxiDriver.jpg',
+  genre: ['Drama', 'Psychological']
 },
 {
   id: 20,
