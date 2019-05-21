@@ -207,15 +207,35 @@ var numberOfPages = Math.ceil(movies.length / maxNumberOnScreen);
 if(numberOfPages > 1){
     var pagination = document.getElementById('paginationMovies');
     for (var i = 0; i < numberOfPages; i++) {
-        pagination.innerHTML += '<li class="page-item"><a class="page-link" href="#">'+(i+1)+'</a></li>';
+        pagination.innerHTML += '<li class="page-item"><a class="page-link" href="#" onclick="clickOnPagination('+(i+1)+')">'+(i+1)+'</a></li>';
     }
 }
+
+var endNumber = 8;
+var startNumber = endNumber - 8;
+
+for (var a = 0; a < array.length; a++) {
+
+}
+
+function clickOnPagination(x){
+
+
+    console.log("You clicked on page number " + (x));
+}
+
+
+// console.log("The minimum/starting number is...");
+// console.log("The maximum/finishing number is...");
+
+
+
 
 if(maxNumberOnScreen > movies.length){
     // console.log("There are not enough movies in the database to fill the entire screen");
     showMovieThumbnails(0, movies.length);
 } else {
-    // console.log("there is more movies than the max on screen");
+    // console.log("there are more movies than the max on screen");
     showMovieThumbnails(0, maxNumberOnScreen);
 }
 
@@ -224,6 +244,7 @@ function showMovieThumbnails(start, end){
     console.log(start);
     console.log(end);
     for (var i = start; i < end; i++) {
+
         var movie = movies[i];
 
         var movieCard = '<div class="col-12 col-sm-6 col-md-3 mb-3 text-center">';
@@ -236,6 +257,15 @@ function showMovieThumbnails(start, end){
         movieCard += '</div>';
 
         document.getElementById('moviesList').innerHTML += movieCard;
+    }
+}
+
+// TASK: when you click on a button, it should console.log("You clicked on page"+[i]); corresponding to page number
+
+
+for (var i = 0; i < pagination.length; i++) {
+    pagination[i].onclick = function(){
+      console.log("You clicked on page "+[i]);
     }
 }
 
