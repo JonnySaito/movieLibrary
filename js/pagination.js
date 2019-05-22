@@ -80,15 +80,15 @@ var movies = [
    genre: ['Comedy']
  },
  {
-    id: 9,
-    title: 'Wings of Desire',
-    year: 1987,
-    directors: ['Wim Wenders'],
-    bio: 'An angel tires of overseeing human activity and wishes to become human when he falls in love with a mortal.',
-    movieLength: 128,
-    poster: 'wingsOfDesire.jpg',
-   genre: ['Drama']
- },
+   id: 9,
+   title: 'Evil Dead II',
+   year: 1987,
+   directors: ['Sam Raimi'],
+   bio: 'The lone survivor of an onslaught of flesh-possessing spirits holes up in a cabin with a group of strangers while the demons continue their attack.',
+   movieLength: 84,
+   poster: 'evilDead.jpg',
+  genre: ['Horror', 'Comedy']
+},
   {
     id: 10,
     title: 'Sen to Chihiro',
@@ -238,13 +238,42 @@ var movies = [
   movieLength: 111,
   poster: 'kes.jpg',
  genre: ['Drama']
+},
+{
+  id: 25,
+  title: 'Coco',
+  year: 2017,
+  directors: ['Lee Unkrich', 'Adrian Molina'],
+  bio: 'Aspiring musician Miguel, confronted with his family\'s ancestral ban on music, enters the Land of the Dead to find his great-great-grandfather, a legendary singer.',
+  movieLength: 105,
+  poster: 'coco.jpg',
+  genre: ['Animation', 'Adventure', 'Comedy']
+},
+{
+  id: 26,
+  title: 'Alien',
+  year: 1979,
+  directors: ['Ridley Scott'],
+  bio: 'After a space merchant vessel perceives an unknown transmission as a distress call, its landing on the source moon finds one of the crew attacked by a mysterious lifeform, and they soon realize that its life cycle has merely begun.',
+  movieLength: 117,
+  poster: 'alien.jpg',
+  genre: ['Sci-fi', 'Horror', 'Suspense']
+},
+{
+   id: 27,
+   title: 'Wings of Desire',
+   year: 1987,
+   directors: ['Wim Wenders'],
+   bio: 'An angel tires of overseeing human activity and wishes to become human when he falls in love with a mortal.',
+   movieLength: 128,
+   poster: 'wingsOfDesire.jpg',
+   genre: ['Drama']
 }
 ];
 
+var currentTab = 'Movies';
 var maxNumberOnScreen = 4;
 var numberOfPages = Math.ceil(movies.length / maxNumberOnScreen);
-
-
 
 if(numberOfPages > 1){
     var pagination = document.getElementById('paginationMovies');
@@ -264,13 +293,19 @@ if(maxNumberOnScreen > movies.length){
 // TASK: when you click on a button, it should console.log("You clicked on page" + (x)); corresponding to page number we got in earlier for loop
 function clickOnPagination(x){
     // console.log("You clicked on page number " + (x));
-    var endNumber = (x * maxNumberOnScreen);
-    var startNumber = (endNumber - maxNumberOnScreen);
+
+    if (movies.length < (x * maxNumberOnScreen)) {
+       endNumber = movies.length;
+     } else {
+       endNumber = x * maxNumberOnScreen;
+     }
+     var startNumber = (endNumber - maxNumberOnScreen);
     document.getElementById('moviesList').innerHTML = " ";
     showMovieThumbnails(startNumber, endNumber);
 }
 
-function showMovieThumbnails(start, end){
+
+function showMovieThumbnails(start,end){
     for (var i = start; i < end; i++) {
         var movie = movies[i];
         var movieCard = '<div class="col-12 col-sm-6 col-md-3 mb-3 text-center">';
@@ -283,5 +318,35 @@ function showMovieThumbnails(start, end){
         movieCard += '</div>';
 
         document.getElementById('moviesList').innerHTML += movieCard;
+    }
+}
+
+var pageTabs = document.getElementsByClassName('page-tab');
+for (var i = 0; i < pageTabs.length; i++) {
+    pageTabs[i].onclick = function(){
+        for (var j = 0; j < pageTabs.length; j++) {
+            if (pageTabs[j].classList.contains('active')){
+                (pageTabs[j].classList.remove('active'));
+                break;
+            }
+        }
+        if(!this.classList.contains('active')){
+            this.classList.add('active');
+            }
+        changeTab(this.innerText);
+        // console.log(this.classList);
+        // this.classList.add('newClass', 'secondNewClass');
+        // console.log(this.classList.contains('active'));
+        // console.log(this.classList.item(0));
+        // this.classList.remove('active');
+        // this.classList.toggle('active');
+    };
+}
+function changeTab(tabName){
+    if(currentTab === tabName){
+        console.log('you are still on the same page');
+    } else {
+        currentTab = tabName;
+        console.log('Change to the ' + tabName + ' page')
     }
 }
