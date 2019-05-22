@@ -161,6 +161,46 @@ var movies = [
 },
 {
   id: 17,
+  title: 'Groundhog Day',
+  year: 1993,
+  directors: ['Harold Ramis'],
+  bio: 'A weatherman finds himself inexplicably living the same day over and over again. Bill Murray is a bloody legend.',
+  movieLength: 101,
+  poster: 'groundhogDay.jpg',
+ genre: ['Comedy']
+},
+{
+  id: 18,
+  title: 'Inception',
+  year: 2010,
+  directors: ['Christopher Nolan'],
+  bio: 'A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O.',
+  movieLength: 128,
+  poster: 'inception.jpg',
+ genre: ['Thriller', 'Sci-fi', 'Drama']
+},
+{
+  id: 19,
+  title: 'Thin Red Line',
+  year: 1998,
+  directors: ['Terrence Malick'],
+  bio: 'Adaptation of James Jones\' autobiographical 1962 novel, focusing on the conflict at Guadalcanal during the second World War.',
+  movieLength: 170,
+  poster: 'thinRedLine.jpg',
+  genre: ['Drama', 'War']
+},
+{
+  id: 20,
+  title: 'Superbad',
+  year: 2007,
+  directors: ['Greg Mottola'],
+  bio: 'Two co-dependent high school seniors are forced to deal with separation anxiety after their plan to stage a booze-soaked party goes awry.',
+  movieLength: 113,
+  poster: 'superbad.jpg',
+ genre: ['Comedy']
+},
+{
+  id: 21,
   title: 'Shoplifters',
   year: 2018,
   directors: ['Hirokazu Koreeda'],
@@ -170,7 +210,7 @@ var movies = [
  genre: ['Drama']
 },
 {
-  id: 18,
+  id: 22,
   title: 'Jean de Florette',
   year: 1986,
   directors: ['Claude Berri'],
@@ -180,7 +220,7 @@ var movies = [
  genre: ['Drama']
 },
 {
-  id: 19,
+  id: 23,
   title: 'Taxi Driver',
   year: 1976,
   directors: ['Martin Scorcese'],
@@ -190,7 +230,7 @@ var movies = [
   genre: ['Drama', 'Psychological']
 },
 {
-  id: 20,
+  id: 24,
   title: 'Kes',
   year: 1969,
   directors: ['Ken Loach'],
@@ -201,8 +241,10 @@ var movies = [
 }
 ];
 
-var maxNumberOnScreen = 8;
+var maxNumberOnScreen = 4;
 var numberOfPages = Math.ceil(movies.length / maxNumberOnScreen);
+
+
 
 if(numberOfPages > 1){
     var pagination = document.getElementById('paginationMovies');
@@ -210,26 +252,6 @@ if(numberOfPages > 1){
         pagination.innerHTML += '<li class="page-item"><a class="page-link" href="#" onclick="clickOnPagination('+(i+1)+')">'+(i+1)+'</a></li>';
     }
 }
-
-var endNumber = 8;
-var startNumber = endNumber - 8;
-
-for (var a = 0; a < array.length; a++) {
-
-}
-
-function clickOnPagination(x){
-
-
-    console.log("You clicked on page number " + (x));
-}
-
-
-// console.log("The minimum/starting number is...");
-// console.log("The maximum/finishing number is...");
-
-
-
 
 if(maxNumberOnScreen > movies.length){
     // console.log("There are not enough movies in the database to fill the entire screen");
@@ -239,14 +261,18 @@ if(maxNumberOnScreen > movies.length){
     showMovieThumbnails(0, maxNumberOnScreen);
 }
 
+// TASK: when you click on a button, it should console.log("You clicked on page" + (x)); corresponding to page number we got in earlier for loop
+function clickOnPagination(x){
+    // console.log("You clicked on page number " + (x));
+    var endNumber = (x * maxNumberOnScreen);
+    var startNumber = (endNumber - maxNumberOnScreen);
+    document.getElementById('moviesList').innerHTML = " ";
+    showMovieThumbnails(startNumber, endNumber);
+}
 
 function showMovieThumbnails(start, end){
-    console.log(start);
-    console.log(end);
     for (var i = start; i < end; i++) {
-
         var movie = movies[i];
-
         var movieCard = '<div class="col-12 col-sm-6 col-md-3 mb-3 text-center">';
             movieCard += '<div class="movieThumb movieThumb2 card h-100" data-id="'+movie.id+'">';
                 movieCard += '<img src="images/posters/'+movie.poster+'" class="card-img-top" alt="">';
@@ -259,20 +285,3 @@ function showMovieThumbnails(start, end){
         document.getElementById('moviesList').innerHTML += movieCard;
     }
 }
-
-// TASK: when you click on a button, it should console.log("You clicked on page"+[i]); corresponding to page number
-
-
-for (var i = 0; i < pagination.length; i++) {
-    pagination[i].onclick = function(){
-      console.log("You clicked on page "+[i]);
-    }
-}
-
-// var moviesList = document.getElementById('moviesList');
-//
-// for (var i = 0; i < movies.length; i++) {
-//   // console.log(movies[i]);
-//   var movie = movies[i];
-//   // console.log(movie.title);
-//     };
