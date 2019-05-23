@@ -270,27 +270,10 @@ var movies = [
    genre: ['Drama']
 }
 ];
-
-var currentTab = 'Movies';
 var maxNumberOnScreen = 4;
-var numberOfPages = Math.ceil(movies.length / maxNumberOnScreen);
+var currentTab = 'Movies';
+var pageContainer = document.getElementById('pageContainer');
 
-if(numberOfPages > 1){
-    var pagination = document.getElementById('paginationMovies');
-    for (var i = 0; i < numberOfPages; i++) {
-        pagination.innerHTML += '<li class="page-item"><a class="page-link" href="#" onclick="clickOnPagination('+(i+1)+')">'+(i+1)+'</a></li>';
-    }
-}
-
-if(maxNumberOnScreen > movies.length){
-    // console.log("There are not enough movies in the database to fill the entire screen");
-    showMovieThumbnails(0, movies.length);
-} else {
-    // console.log("there are more movies than the max on screen");
-    showMovieThumbnails(0, maxNumberOnScreen);
-}
-
-// TASK: when you click on a button, it should console.log("You clicked on page" + (x)); corresponding to page number we got in earlier for loop
 function clickOnPagination(x){
     // console.log("You clicked on page number " + (x));
 
@@ -303,7 +286,6 @@ function clickOnPagination(x){
     document.getElementById('moviesList').innerHTML = " ";
     showMovieThumbnails(startNumber, endNumber);
 }
-
 
 function showMovieThumbnails(start,end){
     for (var i = start; i < end; i++) {
@@ -342,11 +324,67 @@ for (var i = 0; i < pageTabs.length; i++) {
         // this.classList.toggle('active');
     };
 }
+
+
 function changeTab(tabName){
     if(currentTab === tabName){
         console.log('you are still on the same page');
     } else {
+        pageContainer.innerHTML = '';
         currentTab = tabName;
-        console.log('Change to the ' + tabName + ' page')
+        if(tabName === 'Directors'){
+            showDirectors();
+        }
+        else if(tabName === 'Genres'){
+            showGenres();
+        }
+        else if(tabName === 'Movies'){
+            pageContainer.innerHTML = '<div id="moviesList" class="row"></div>';
+            pageContainer.innerHTML += '<div class="row"><div class="col"><nav><ul id="paginationMovies" class="pagination justify-content-center"></ul></nav></div></div>';
+            showMovies();
+        }
+    }
+}
+
+
+var allDirectors;
+function showDirectors(){
+    for (var i = 0; i < movies.length; i++) {
+        var directorList = movies[i].directors[j];
+            for (var j = 0; j < movies[j].directors.length; j++) {
+                allDirectors += movies[j].directors;
+                console.log(directorList);
+            }
+    }
+    console.log("show directors");
+    pageContainer.innerHTML = '<div class="row"><div class="col"><h2 class="display-4">Directors</h2></div></div>';
+    pageContainer.innerHTML += '<div class="row"><div class="col"><ul>'+'<li>'+'directorList'+'</li></ul>'
+
+}
+
+function showGenres(){
+    console.log("show genres");
+    pageContainer.innerHTML = '<div class="row"><div class="col"><h2 class="display-4">Genres</h2></div></div>';
+}
+
+showMovies()
+function showMovies(){
+    console.log("show movies");
+
+    var numberOfPages = Math.ceil(movies.length / maxNumberOnScreen);
+
+    if(numberOfPages > 1){
+        var pagination = document.getElementById('paginationMovies');
+        for (var i = 0; i < numberOfPages; i++) {
+            pagination.innerHTML += '<li class="page-item"><a class="page-link" href="#" onclick="clickOnPagination('+(i+1)+')">'+(i+1)+'</a></li>';
+        }
+    }
+
+    if(maxNumberOnScreen > movies.length){
+        // console.log("There are not enough movies in the database to fill the entire screen");
+        showMovieThumbnails(0, movies.length);
+    } else {
+        // console.log("there are more movies than the max on screen");
+        showMovieThumbnails(0, maxNumberOnScreen);
     }
 }
