@@ -22,7 +22,7 @@ var movies = [
   {
     id: 3,
     title: 'Les Quatre Cents Coups',
-    year: 1971,
+    year: 1959,
     directors: ['Francois Truffaut'],
     bio: 'A young boy, left without attention, delves into a life of petty crime.',
     movieLength: 99,
@@ -347,18 +347,20 @@ function changeTab(tabName){
 }
 
 
-var allDirectors;
+var directorList;
 function showDirectors(){
-    for (var i = 0; i < movies.length; i++) {
-        var directorList = movies[i].directors[j];
-            for (var j = 0; j < movies[j].directors.length; j++) {
-                allDirectors += movies[j].directors;
-                console.log(directorList);
-            }
-    }
-    console.log("show directors");
-    pageContainer.innerHTML = '<div class="row"><div class="col"><h2 class="display-4">Directors</h2></div></div>';
-    pageContainer.innerHTML += '<div class="row"><div class="col"><ul>'+'<li>'+'directorList'+'</li></ul>'
+  for (var i = 0; i < movies.length; i++) {
+        directorList = movies[i].directors;
+        for (var j = 0; j < movies[i].directors.length; j++) {
+          console.log(directorList[j]);
+          // document.getElementById('pageContainer').innerHTML += "<li class = 'list-inline-item'>" + directorList[j] + "</li>";
+
+
+          pageContainer.innerHTML = '<div class="row"><div class="col"><h2 class="display-4">Directors</h2></div></div>';
+          pageContainer.innerHTML += '<div class="row"><div class="col"><ul><li>' + directorList[j] + '</li></ul></div></div>'
+
+          }
+        }
 
 }
 
