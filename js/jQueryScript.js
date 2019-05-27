@@ -319,6 +319,7 @@ function clickOnPagination(x){
 
 showMovieThumbnails();
 function showMovieThumbnails(start,end){
+    $('#moviesList').empty();
     for (var i = start; i < end; i++) {
         var movie = movies[i];
         var movieCard = '<div class="col-12 col-sm-6 col-md-3 mb-3 text-center">';
@@ -406,13 +407,13 @@ function changeTabs(tabName){
 
 var directorList;
 function showDirectors(){
-  for (var i = 0; i < movies.length; i++) {
+        $('#pageContainer').html('<div class="row"><div class="col"><h2 class="display-4">Directors</h2></div></div>');
+        for (var i = 0; i < movies.length; i++) {
         directorList = movies[i].directors;
         for (var j = 0; j < movies[i].directors.length; j++) {
           console.log(directorList[j]);
           // document.getElementById('pageContainer').innerHTML += "<li class = 'list-inline-item'>" + directorList[j] + "</li>";
 
-          $('#pageContainer').html('<div class="row"><div class="col"><h2 class="display-4">Directors</h2></div></div>');
           $('#pageContainer').append('<div class="row"><div class="col"><ul><li>' + directorList[j] + '</li></ul></div></div>');
 
           }
@@ -433,7 +434,7 @@ function showMovies(){
     if(numberOfPages > 1){
         var pagination = $('#paginationMovies');
         for (var i = 0; i < numberOfPages; i++) {
-            $('#pagination').append('<li class="page-item"><a class="page-link" href="#" onclick="clickOnPagination('+(i+1)+')">'+(i+1)+'</a></li>') ;
+            $('.pagination').append('<li class="page-item"><a class="page-link" href="#" onclick="clickOnPagination('+(i+1)+')">'+(i+1)+'</a></li>') ;
         }
     }
 
