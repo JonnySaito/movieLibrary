@@ -22,7 +22,7 @@ var movies = [
   {
     id: 3,
     title: 'Les Quatre Cents Coups',
-    year: 1971,
+    year: 1959,
     directors: ['Francois Truffaut'],
     bio: 'A young boy, left without attention, delves into a life of petty crime.',
     movieLength: 99,
@@ -80,15 +80,15 @@ var movies = [
    genre: ['Comedy']
  },
  {
-    id: 9,
-    title: 'Wings of Desire',
-    year: 1987,
-    directors: ['Wim Wenders'],
-    bio: 'An angel tires of overseeing human activity and wishes to become human when he falls in love with a mortal.',
-    movieLength: 128,
-    poster: 'wingsOfDesire.jpg',
-   genre: ['Drama']
- },
+   id: 9,
+   title: 'Evil Dead II',
+   year: 1987,
+   directors: ['Sam Raimi'],
+   bio: 'The lone survivor of an onslaught of flesh-possessing spirits holes up in a cabin with a group of strangers while the demons continue their attack.',
+   movieLength: 84,
+   poster: 'evilDead.jpg',
+  genre: ['Horror', 'Comedy']
+},
   {
     id: 10,
     title: 'Sen to Chihiro',
@@ -161,6 +161,46 @@ var movies = [
 },
 {
   id: 17,
+  title: 'Groundhog Day',
+  year: 1993,
+  directors: ['Harold Ramis'],
+  bio: 'A weatherman finds himself inexplicably living the same day over and over again. Bill Murray is a bloody legend.',
+  movieLength: 101,
+  poster: 'groundhogDay.jpg',
+ genre: ['Comedy']
+},
+{
+  id: 18,
+  title: 'Inception',
+  year: 2010,
+  directors: ['Christopher Nolan'],
+  bio: 'A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O.',
+  movieLength: 128,
+  poster: 'inception.jpg',
+ genre: ['Thriller', 'Sci-fi', 'Drama']
+},
+{
+  id: 19,
+  title: 'Thin Red Line',
+  year: 1998,
+  directors: ['Terrence Malick'],
+  bio: 'Adaptation of James Jones\' autobiographical 1962 novel, focusing on the conflict at Guadalcanal during the second World War.',
+  movieLength: 170,
+  poster: 'thinRedLine.jpg',
+  genre: ['Drama', 'War']
+},
+{
+  id: 20,
+  title: 'Superbad',
+  year: 2007,
+  directors: ['Greg Mottola'],
+  bio: 'Two co-dependent high school seniors are forced to deal with separation anxiety after their plan to stage a booze-soaked party goes awry.',
+  movieLength: 113,
+  poster: 'superbad.jpg',
+ genre: ['Comedy']
+},
+{
+  id: 21,
   title: 'Shoplifters',
   year: 2018,
   directors: ['Hirokazu Koreeda'],
@@ -170,7 +210,7 @@ var movies = [
  genre: ['Drama']
 },
 {
-  id: 18,
+  id: 22,
   title: 'Jean de Florette',
   year: 1986,
   directors: ['Claude Berri'],
@@ -180,7 +220,7 @@ var movies = [
  genre: ['Drama']
 },
 {
-  id: 19,
+  id: 23,
   title: 'Taxi Driver',
   year: 1976,
   directors: ['Martin Scorcese'],
@@ -190,7 +230,57 @@ var movies = [
   genre: ['Drama', 'Psychological']
 },
 {
-  id: 20,
+   id: 24,
+   title: 'The Princess Bride',
+   year: 1987,
+   directors: ['Rob Reiner'],
+   bio: 'While home sick in bed, a young boy\'s grandfather reads him the story of a farmboy-turned-pirate who encounters numerous obstacles, enemies and allies in his quest to be reunited with his true love.',
+   movieLength: 98,
+   poster: 'princessBride.jpg',
+   genre: ['Comedy', 'Fantasy']
+},
+{
+  id: 25,
+  title: 'Coco',
+  year: 2017,
+  directors: ['Lee Unkrich', 'Adrian Molina'],
+  bio: 'Aspiring musician Miguel, confronted with his family\'s ancestral ban on music, enters the Land of the Dead to find his great-great-grandfather, a legendary singer.',
+  movieLength: 105,
+  poster: 'coco.jpg',
+  genre: ['Animation', 'Adventure', 'Comedy']
+},
+{
+  id: 26,
+  title: 'Alien',
+  year: 1979,
+  directors: ['Ridley Scott'],
+  bio: 'After a space merchant vessel perceives an unknown transmission as a distress call, its landing on the source moon finds one of the crew attacked by a mysterious lifeform, and they soon realize that its life cycle has merely begun.',
+  movieLength: 117,
+  poster: 'alien.jpg',
+  genre: ['Sci-fi', 'Horror', 'Suspense']
+},
+{
+   id: 27,
+   title: 'Wings of Desire',
+   year: 1987,
+   directors: ['Wim Wenders'],
+   bio: 'An angel tires of overseeing human activity and wishes to become human when he falls in love with a mortal.',
+   movieLength: 128,
+   poster: 'wingsOfDesire.jpg',
+   genre: ['Drama']
+},
+{
+   id: 28,
+   title: 'This Is Spinal Tap',
+   year: 1984,
+   directors: ['Rob Reiner'],
+   bio: 'Spinal Tap, one of England\'s loudest bands, is chronicled by film director Marty DiBergi on what proves to be a fateful tour.',
+   movieLength: 82,
+   poster: 'spinalTap.jpg',
+   genre: ['Comedy', 'Mockumentary']
+},
+{
+  id: 29,
   title: 'Kes',
   year: 1969,
   directors: ['Ken Loach'],
@@ -198,6 +288,16 @@ var movies = [
   movieLength: 111,
   poster: 'kes.jpg',
  genre: ['Drama']
+},
+{
+   id: 30,
+   title: 'Trainspotting',
+   year: 1996,
+   directors: ['Danny Boyle'],
+   bio: 'Renton, deeply immersed in the Edinburgh drug scene, tries to clean up and get out, despite the allure of the drugs and influence of friends.',
+   movieLength: 93,
+   poster: 'trainspotting.jpg',
+   genre: ['Drama', 'Comedy']
 }
 ];
 

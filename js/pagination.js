@@ -230,14 +230,14 @@ var movies = [
   genre: ['Drama', 'Psychological']
 },
 {
-  id: 24,
-  title: 'Kes',
-  year: 1969,
-  directors: ['Ken Loach'],
-  bio: 'A young, English working-class boy spends his free time caring for and training his pet falcon.',
-  movieLength: 111,
-  poster: 'kes.jpg',
- genre: ['Drama']
+   id: 24,
+   title: 'The Princess Bride',
+   year: 1987,
+   directors: ['Rob Reiner'],
+   bio: 'While home sick in bed, a young boy\'s grandfather reads him the story of a farmboy-turned-pirate who encounters numerous obstacles, enemies and allies in his quest to be reunited with his true love.',
+   movieLength: 98,
+   poster: 'princessBride.jpg',
+   genre: ['Comedy', 'Fantasy']
 },
 {
   id: 25,
@@ -268,6 +268,36 @@ var movies = [
    movieLength: 128,
    poster: 'wingsOfDesire.jpg',
    genre: ['Drama']
+},
+{
+   id: 28,
+   title: 'This Is Spinal Tap',
+   year: 1984,
+   directors: ['Rob Reiner'],
+   bio: 'Spinal Tap, one of England\'s loudest bands, is chronicled by film director Marty DiBergi on what proves to be a fateful tour.',
+   movieLength: 82,
+   poster: 'spinalTap.jpg',
+   genre: ['Comedy', 'Mockumentary']
+},
+{
+  id: 29,
+  title: 'Kes',
+  year: 1969,
+  directors: ['Ken Loach'],
+  bio: 'A young, English working-class boy spends his free time caring for and training his pet falcon.',
+  movieLength: 111,
+  poster: 'kes.jpg',
+ genre: ['Drama']
+},
+{
+   id: 30,
+   title: 'Trainspotting',
+   year: 1996,
+   directors: ['Danny Boyle'],
+   bio: 'Renton, deeply immersed in the Edinburgh drug scene, tries to clean up and get out, despite the allure of the drugs and influence of friends.',
+   movieLength: 93,
+   poster: 'trainspotting.jpg',
+   genre: ['Drama', 'Comedy']
 }
 ];
 var maxNumberOnScreen = 4;

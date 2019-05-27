@@ -230,14 +230,14 @@ var movies = [
   genre: ['Drama', 'Psychological']
 },
 {
-  id: 24,
-  title: 'Kes',
-  year: 1969,
-  directors: ['Ken Loach'],
-  bio: 'A young, English working-class boy spends his free time caring for and training his pet falcon.',
-  movieLength: 111,
-  poster: 'kes.jpg',
- genre: ['Drama']
+   id: 24,
+   title: 'The Princess Bride',
+   year: 1987,
+   directors: ['Rob Reiner'],
+   bio: 'While home sick in bed, a young boy\'s grandfather reads him the story of a farmboy-turned-pirate who encounters numerous obstacles, enemies and allies in his quest to be reunited with his true love.',
+   movieLength: 98,
+   poster: 'princessBride.jpg',
+   genre: ['Comedy', 'Fantasy']
 },
 {
   id: 25,
@@ -268,6 +268,36 @@ var movies = [
    movieLength: 128,
    poster: 'wingsOfDesire.jpg',
    genre: ['Drama']
+},
+{
+   id: 28,
+   title: 'This Is Spinal Tap',
+   year: 1984,
+   directors: ['Rob Reiner'],
+   bio: 'Spinal Tap, one of England\'s loudest bands, is chronicled by film director Marty DiBergi on what proves to be a fateful tour.',
+   movieLength: 82,
+   poster: 'spinalTap.jpg',
+   genre: ['Comedy', 'Mockumentary']
+},
+{
+  id: 29,
+  title: 'Kes',
+  year: 1969,
+  directors: ['Ken Loach'],
+  bio: 'A young, English working-class boy spends his free time caring for and training his pet falcon.',
+  movieLength: 111,
+  poster: 'kes.jpg',
+ genre: ['Drama']
+},
+{
+   id: 30,
+   title: 'Trainspotting',
+   year: 1996,
+   directors: ['Danny Boyle'],
+   bio: 'Renton, deeply immersed in the Edinburgh drug scene, tries to clean up and get out, despite the allure of the drugs and influence of friends.',
+   movieLength: 93,
+   poster: 'trainspotting.jpg',
+   genre: ['Drama', 'Comedy']
 }
 ];
 var maxNumberOnScreen = 4;
@@ -287,6 +317,7 @@ function clickOnPagination(x){
     showMovieThumbnails(startNumber, endNumber);
 }
 
+showMovieThumbnails();
 function showMovieThumbnails(start,end){
     for (var i = start; i < end; i++) {
         var movie = movies[i];
@@ -298,8 +329,7 @@ function showMovieThumbnails(start,end){
                 movieCard += '</div>';
             movieCard += '</div>';
         movieCard += '</div>';
-
-        $('#moviesList').html += movieCard;
+        $('#moviesList').append(movieCard);
     }
 }
 
@@ -324,8 +354,8 @@ function changeTabs(tabName){
                 showGenres();
             }
             else if(tabName === 'Movies'){
-                $('#pageContainer').html($('<div id="moviesList" class="row"></div>'));
-                $('#pageContainer').append($('<div class="row"><div class="col"><nav><ul id="paginationMovies" class="pagination justify-content-center"></ul></nav></div></div>'));
+                $('#pageContainer').html('<div id="moviesList" class="row"></div>');
+                $('#pageContainer').append('<div class="row"><div class="col"><nav><ul id="paginationMovies" class="pagination justify-content-center"></ul></nav></div></div>');
                 showMovies();
             }
         }
@@ -374,9 +404,6 @@ function changeTabs(tabName){
 // }
 
 
-
-
-
 var directorList;
 function showDirectors(){
   for (var i = 0; i < movies.length; i++) {
@@ -385,18 +412,16 @@ function showDirectors(){
           console.log(directorList[j]);
           // document.getElementById('pageContainer').innerHTML += "<li class = 'list-inline-item'>" + directorList[j] + "</li>";
 
-
-          pageContainer.innerHTML = '<div class="row"><div class="col"><h2 class="display-4">Directors</h2></div></div>';
-          pageContainer.innerHTML += '<div class="row"><div class="col"><ul><li>' + directorList[j] + '</li></ul></div></div>'
+          $('#pageContainer').html('<div class="row"><div class="col"><h2 class="display-4">Directors</h2></div></div>');
+          $('#pageContainer').append('<div class="row"><div class="col"><ul><li>' + directorList[j] + '</li></ul></div></div>');
 
           }
         }
-
 }
 
 function showGenres(){
     console.log("show genres");
-    pageContainer.innerHTML = '<div class="row"><div class="col"><h2 class="display-4">Genres</h2></div></div>';
+    $('#pageContainer').html('<div class="row"><div class="col"><h2 class="display-4">Genres</h2></div></div>');
 }
 
 showMovies()
@@ -406,9 +431,9 @@ function showMovies(){
     var numberOfPages = Math.ceil(movies.length / maxNumberOnScreen);
 
     if(numberOfPages > 1){
-        var pagination = document.getElementById('paginationMovies');
+        var pagination = $('#paginationMovies');
         for (var i = 0; i < numberOfPages; i++) {
-            pagination.innerHTML += '<li class="page-item"><a class="page-link" href="#" onclick="clickOnPagination('+(i+1)+')">'+(i+1)+'</a></li>';
+            $('#pagination').append('<li class="page-item"><a class="page-link" href="#" onclick="clickOnPagination('+(i+1)+')">'+(i+1)+'</a></li>') ;
         }
     }
 
