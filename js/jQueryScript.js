@@ -406,6 +406,8 @@ function changeTabs(tabName){
 
 
 var directorList;
+var allDirectors;
+
 function showDirectors(){
         $('#pageContainer').html('<div class="row"><div class="col"><h2 class="display-4">Directors</h2></div></div>');
         for (var i = 0; i < movies.length; i++) {
@@ -413,8 +415,9 @@ function showDirectors(){
         for (var j = 0; j < movies[i].directors.length; j++) {
           console.log(directorList[j]);
           // document.getElementById('pageContainer').innerHTML += "<li class = 'list-inline-item'>" + directorList[j] + "</li>";
-          
-          $('#pageContainer').append('<div class="row"><div class="col"><ul><li>' + directorList[j] + '</li></ul></div></div>');
+          var allDirectors = [directorList[j]];
+
+          $('#pageContainer').append('<div class="row"><div class="col"><ul><li>' + uniqueDirectors + '</li></ul></div></div>');
 
           }
         }
