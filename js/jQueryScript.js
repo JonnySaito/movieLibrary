@@ -404,6 +404,22 @@ function changeTabs(tabName){
 //     }
 // }
 
+var finalDirec = [];
+var listOfDirec = [];
+
+for (var i = 0; i < movies.length; i++) {
+  for (var j = 0; j < movies[i].directors.length; j++) {
+    listOfDirec.push(movies[i].directors[j]);
+  }
+}
+
+for (var i = 0; i < listOfDirec.length; i++) {
+  if (finalDirec.includes(listOfDirec[i]) === false) {
+    finalDirec.push(listOfDirec[i]);
+  }
+}
+
+console.log(finalDirec);
 
 var directorList;
 var allDirectors;
@@ -411,15 +427,15 @@ var allDirectors;
 function showDirectors(){
         $('#pageContainer').html('<div class="row"><div class="col"><h2 class="display-4">Directors</h2></div></div>');
         for (var i = 0; i < movies.length; i++) {
-        directorList = movies[i].directors;
-        for (var j = 0; j < movies[i].directors.length; j++) {
-          console.log(directorList[j]);
-          // document.getElementById('pageContainer').innerHTML += "<li class = 'list-inline-item'>" + directorList[j] + "</li>";
-          var allDirectors = [directorList[j]];
+          directorList = movies[i].directors;
+          for (var j = 0; j < movies[i].directors.length; j++) {
+            console.log(directorList[j]);
+            // document.getElementById('pageContainer').innerHTML += "<li class = 'list-inline-item'>" + directorList[j] + "</li>";
+            var allDirectors = [directorList[j]];
 
-          $('#pageContainer').append('<div class="row"><div class="col"><ul><li>' + uniqueDirectors + '</li></ul></div></div>');
+            $('#pageContainer').append('<div class="row"><div class="col"><ul><li>' + allDirectors + '</li></ul></div></div>');
 
-          }
+            }
         }
 }
 
