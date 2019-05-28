@@ -1,14 +1,14 @@
 var movies = [
   {
     id: 1,
-    title: 'Raising Arizona',
-    year: 1987,
+    title: 'Big Lebowski',
+    year: 1998,
     directors: ['Joel Coen', 'Ethan Coen'],
-    bio: 'When a childless couple of an ex-con and an ex-cop decide to help themselves to one of another family\'s quintuplets, their lives become more complicated than they anticipated.',
-    movieLength: 94,
-    poster: 'RaisingArizona.jpg',
-    genre: ['Comedy']
-  },
+    bio: 'Jeff "The Dude" Lebowski, mistaken for a millionaire of the same name, seeks restitution for his ruined rug and enlists his bowling buddies to help get it.',
+    movieLength: 117,
+    poster: 'bigLebowski.jpg',
+   genre: ['Comedy']
+ },
   {
     id: 2,
     title: 'Paris, Texas',
@@ -67,18 +67,18 @@ var movies = [
     bio: 'After a car wreck on the winding Mulholland Drive renders a woman amnesiac, she and a perky Hollywood-hopeful search for clues and answers across Los Angeles in a twisting venture beyond dreams and reality.',
     movieLength: 147,
     poster: 'mulhollandDrive.jpg',
-   genre: ['Psychological', 'Drama']
+    genre: ['Psychological', 'Drama']
   },
   {
-    id: 8,
-    title: 'Big Lebowski',
-    year: 1998,
-    directors: ['Joel Coen', 'Ethan Coen'],
-    bio: 'Jeff "The Dude" Lebowski, mistaken for a millionaire of the same name, seeks restitution for his ruined rug and enlists his bowling buddies to help get it.',
-    movieLength: 117,
-    poster: 'bigLebowski.jpg',
+   id: 8,
+   title: 'Raising Arizona',
+   year: 1987,
+   directors: ['Joel Coen', 'Ethan Coen'],
+   bio: 'When a childless couple of an ex-con and an ex-cop decide to help themselves to one of another family\'s quintuplets, their lives become more complicated than they anticipated.',
+   movieLength: 94,
+   poster: 'RaisingArizona.jpg',
    genre: ['Comedy']
- },
+   },
  {
    id: 9,
    title: 'Evil Dead II',
@@ -413,7 +413,7 @@ function showDirectors(){
         for (var j = 0; j < movies[i].directors.length; j++) {
           console.log(directorList[j]);
           // document.getElementById('pageContainer').innerHTML += "<li class = 'list-inline-item'>" + directorList[j] + "</li>";
-
+          
           $('#pageContainer').append('<div class="row"><div class="col"><ul><li>' + directorList[j] + '</li></ul></div></div>');
 
           }
