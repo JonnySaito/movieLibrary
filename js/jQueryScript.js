@@ -354,13 +354,16 @@ function changeTabs(tabName){
             else if(tabName === 'Genres'){
                 showGenres();
             }
+            else if(tabName === 'WatchList'){
+                showWatchList();
+            }
             else if(tabName === 'Movies'){
                 $('#pageContainer').html('<div id="moviesList" class="row"></div>');
                 $('#pageContainer').append('<div class="row"><div class="col"><nav><ul id="paginationMovies" class="pagination justify-content-center"></ul></nav></div></div>');
                 showMovies();
             }
         }
-}
+};
 
 // for (var i = 0; i < pageTabs.length; i++) {
 //     pageTabs[i].onclick = function(){
@@ -381,7 +384,7 @@ function changeTabs(tabName){
 //         // this.classList.remove('active');
 //         // this.classList.toggle('active');
 //     };
-// }
+// };
 
 
 // function changeTab(tabName){
@@ -404,45 +407,35 @@ function changeTabs(tabName){
 //     }
 // }
 
-var finalDirec = [];
-var listOfDirec = [];
-
-for (var i = 0; i < movies.length; i++) {
-  for (var j = 0; j < movies[i].directors.length; j++) {
-    listOfDirec.push(movies[i].directors[j]);
-  }
-}
-
-for (var i = 0; i < listOfDirec.length; i++) {
-  if (finalDirec.includes(listOfDirec[i]) === false) {
-    finalDirec.push(listOfDirec[i]);
-  }
-}
-
-console.log(finalDirec);
-
-var directorList;
-var allDirectors;
-
+var uniqueDirectors = [];
+var allDirectors = [];
 function showDirectors(){
         $('#pageContainer').html('<div class="row"><div class="col"><h2 class="display-4">Directors</h2></div></div>');
         for (var i = 0; i < movies.length; i++) {
-          directorList = movies[i].directors;
           for (var j = 0; j < movies[i].directors.length; j++) {
-            console.log(directorList[j]);
-            // document.getElementById('pageContainer').innerHTML += "<li class = 'list-inline-item'>" + directorList[j] + "</li>";
-            var allDirectors = [directorList[j]];
-
-            $('#pageContainer').append('<div class="row"><div class="col"><ul><li>' + allDirectors + '</li></ul></div></div>');
-
-            }
+            allDirectors.push(movies[i].directors[j]);
+          }
         }
+
+        for (var i = 0; i < allDirectors.length; i++) {
+          if (uniqueDirectors.includes(allDirectors[i]) === false) {
+            uniqueDirectors.push(allDirectors[i]);
+          }
+        }
+            $('#pageContainer').append('<div class="row"><div class="col"><ul><li>' + uniqueDirectors + '</li></ul></div></div>');
 }
+
+console.log(uniqueDirectors);
 
 function showGenres(){
     console.log("show genres");
     $('#pageContainer').html('<div class="row"><div class="col"><h2 class="display-4">Genres</h2></div></div>');
-}
+};
+
+function showWatchList(){
+    console.log("show watchlist");
+    $('#pageContainer').html('<div class="row"><div class="col"><h2 class="display-4">Watchlist</h2></div></div>');
+};
 
 showMovies()
 function showMovies(){
@@ -465,3 +458,4 @@ function showMovies(){
         showMovieThumbnails(0, maxNumberOnScreen);
     }
 }
+//ADD A BUTTON TO THE POPUP FOR "ADD TO WATCH LIST"; THAT ADDS THE MOVIE TO THE WATCH LIST TAB (WHICH INCLUDES A REMOVE BUTTON)
