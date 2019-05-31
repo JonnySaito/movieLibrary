@@ -7,7 +7,7 @@ var movies = [
     bio: 'Jeff "The Dude" Lebowski, mistaken for a millionaire of the same name, seeks restitution for his ruined rug and enlists his bowling buddies to help get it.',
     movieLength: 117,
     poster: 'bigLebowski.jpg',
-   genre: ['Comedy']
+    genre: ['Comedy']
  },
   {
     id: 2,
@@ -17,7 +17,7 @@ var movies = [
     bio: 'Travis Henderson, an aimless drifter who has been missing for four years, wanders out of the desert and must reconnect with society, himself, his life, and his family.',
     movieLength: 145,
     poster: 'parisTexas.jpg',
-   genre: ['Drama', 'Psychological']
+    genre: ['Drama', 'Psychological']
   },
   {
     id: 3,
@@ -27,7 +27,7 @@ var movies = [
     bio: 'A young boy, left without attention, delves into a life of petty crime.',
     movieLength: 99,
     poster: '400Blows.jpg',
-   genre: ['Drama']
+    genre: ['Drama']
   },
   {
     id: 4,
@@ -421,19 +421,31 @@ function showDirectors(){
           if (uniqueDirectors.includes(allDirectors[i]) === false) {
             uniqueDirectors.push(allDirectors[i]);
           }
-          // $('#pageContainer').append('<div class="row"><div class="col"><ul><li>' + uniqueDirectors[i] + '</li></ul></div></div>');
         }
         for (var i = 0; i < uniqueDirectors.length; i++) {
           $('#pageContainer').append('<div class="row"><div class="col"><ul><li>' + uniqueDirectors[i] + '</li></ul></div></div>');
         }
-
 };
 
-
+var uniqueGenres = [];
+var allGenres = [];
 function showGenres(){
-    console.log("show genres");
     $('#pageContainer').html('<div class="row"><div class="col"><h2 class="display-4">Genres</h2></div></div>');
+    for (var i = 0; i < movies.length; i++) {
+      for (var j = 0; j < movies[i].genre.length; j++) {
+        allGenres.push(movies[i].genre[j]);
+      }
+    }
+    for (var i = 0; i < allGenres.length; i++) {
+      if (uniqueGenres.includes(allGenres[i]) === false){
+        uniqueGenres.push(allGenres[i]);
+      }
+    }
+    for (var i = 0; i < uniqueGenres.length; i++) {
+      $('#pageContainer').append('<div class="row"><div class="col"><ul><li>' + uniqueGenres[i] + '</li></ul></div></div>');
+    }
 };
+
 
 function showWatchList(){
     console.log("show watchlist");
@@ -442,7 +454,6 @@ function showWatchList(){
 
 showMovies();
 function showMovies(){
-    console.log("show movies");
 
     var numberOfPages = Math.ceil(movies.length / maxNumberOnScreen);
 
@@ -461,4 +472,105 @@ function showMovies(){
         showMovieThumbnails(0, maxNumberOnScreen);
     }
 }
+
+
+var moviesList = $('#moviesList');
+
+for (var i = 0; i < movies.length; i++) {
+  var movie = movies[i];var genreClass = getGenreColour(movie.genre[0]);
+
+  var movieCard = '<div class="col-12 col-sm-6 col-md-3 mb-3 text-center">';
+      movieCard += '<div class="movieThumb card h-100 border-'+genreClass+' " onclick="showMoreMovie('+movie.id+');">';
+      movieCard += '<img src="images/posters/'+movie.poster+'" class="card-img-top" alt="">';
+        movieCard += '<div class="card-body">';
+          movieCard += '<h5 class="card-title">'+movie.title+'</h5>';
+        movieCard += '</div>';
+      movieCard += '</div>';
+  movieCard += '</div>';
+  moviesList.innerHTML += movieCard;
+}
+
+function showMoreMovie(movieNumber){
+  var singleMovie;
+    for (var i = 0; i < movies.length; i++) {
+        if (movies[i].id === movieNumber) {
+            singleMovie = movies[i];
+            break;
+        }
+    }
+
+        $('#posterImage').src = 'images/posters/'+singleMovie.poster;
+        $('#movieTitle').text = singleMovie.title;
+        $('#movieYear').text = singleMovie.year;
+
+        $('#movieDirectors').html = "";
+          for (var j = 0; j < singleMovie.directors.length; j++) {
+                $('#movieDirectors').html += "<li class = 'list-inline-item'>" + singleMovie.directors[j] + "</li>";
+            };
+        $('#movieBio').text = singleMovie.bio;
+        $('#movieLength').text = singleMovie.movieLength;
+
+        $('#movieGenre').html = "";
+
+
+        var badgeClass = '';
+          for (var i = 0; i < singleMovie.genre.length; i++) {
+              var genreColour = getGenreColour(singleMovie.genre[i]);
+              if(singleMovie.genre[i] === 'Drama'){
+                badgeClass = 'badge-primary';
+            } else if(singleMovie.genre[i] === 'Comedy'){
+                badgeClass = 'badge-success';
+            } else if(singleMovie.genre[i] === 'Sci-fi'){
+                badgeClass = 'badge-danger';
+            } else if(singleMovie.genre[i] === 'Animation'){
+                badgeClass = 'badge-secondary';
+            } else if(singleMovie.genre[i] === 'Suspense'){
+                badgeClass = 'badge-warning';
+            } else if(singleMovie.genre[i] === 'Action'){
+                badgeClass = 'badge-info';
+              } else {
+                badgeClass = 'badge-dark';
+              }
+                $('#movieGenre').html += '<span class= "badge badge-'+genreColour+' mr-1">' + singleMovie.genre[i] + '</span>';
+            };
+
+        $('#moviePopUp').style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+}
+
+var movieThumbnails = $('.movieThumb2');
+  for (var i = 0; i < movieThumbnails.length; i++) {
+    movieThumbnails[i].onclick = function(){
+      var id = parseInt(this.dataset.id);
+      showMoreMovie(id);
+    }
+}
+
+$('#close').click = function(){
+$('#moviePopUp').style.display = 'none'
+document.body.style.overflow = 'scroll';
+}
+
+function getGenreColour(genre){
+    if(genre === 'Drama'){
+      return 'primary';
+    } else if(genre === 'Comedy'){
+      return 'success';
+    } else if(genre === 'Sci-fi'){
+      return 'danger';
+    } else if(genre === 'Animation'){
+      return 'secondary';
+    } else if(genre === 'Suspense'){
+      return 'warning';
+    } else if(genre === 'Action'){
+      return 'info';
+    } else if(genre === 'Psychological'){
+        return 'dark';
+    } else {
+      return 'light';
+    }
+}
+
+
+
 //ADD A BUTTON TO THE POPUP FOR "ADD TO WATCH LIST"; THAT ADDS THE MOVIE TO THE WATCH LIST TAB (WHICH INCLUDES A REMOVE BUTTON)
