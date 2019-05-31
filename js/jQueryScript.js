@@ -354,7 +354,7 @@ function changeTabs(tabName){
             else if(tabName === 'Genres'){
                 showGenres();
             }
-            else if(tabName === 'WatchList'){
+            else if(tabName === 'Watchlist'){
                 showWatchList();
             }
             else if(tabName === 'Movies'){
@@ -421,11 +421,14 @@ function showDirectors(){
           if (uniqueDirectors.includes(allDirectors[i]) === false) {
             uniqueDirectors.push(allDirectors[i]);
           }
+          // $('#pageContainer').append('<div class="row"><div class="col"><ul><li>' + uniqueDirectors[i] + '</li></ul></div></div>');
         }
-            $('#pageContainer').append('<div class="row"><div class="col"><ul><li>' + uniqueDirectors + '</li></ul></div></div>');
-}
+        for (var i = 0; i < uniqueDirectors.length; i++) {
+          $('#pageContainer').append('<div class="row"><div class="col"><ul><li>' + uniqueDirectors[i] + '</li></ul></div></div>');
+        }
 
-console.log(uniqueDirectors);
+};
+
 
 function showGenres(){
     console.log("show genres");
@@ -437,7 +440,7 @@ function showWatchList(){
     $('#pageContainer').html('<div class="row"><div class="col"><h2 class="display-4">Watchlist</h2></div></div>');
 };
 
-showMovies()
+showMovies();
 function showMovies(){
     console.log("show movies");
 
